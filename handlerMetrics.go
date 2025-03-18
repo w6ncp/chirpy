@@ -15,5 +15,5 @@ func (cfg *apiConfig) middlewareMetricsInc(next http.Handler) http.Handler {
 func (cfg *apiConfig) handlerMetrics(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "text/html; charset=utf-8")
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(fmt.Sprintf(readTemplate("admin/metrics.html"), cfg.fileserverHits.Load())))
+	w.Write([]byte(fmt.Sprintf(readTemplate("internal/templates/metrics.html"), cfg.fileserverHits.Load())))
 }
