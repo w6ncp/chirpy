@@ -39,7 +39,7 @@ func (cfg *apiConfig) handlerRefresh(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-func (cfg *apiConfig) handerRevoke(w http.ResponseWriter, r *http.Request) {
+func (cfg *apiConfig) handlerRevoke(w http.ResponseWriter, r *http.Request) {
 	refreshToken, err := auth.GetBearerToken(r.Header)
 	if err != nil {
 		respondWithError(w, http.StatusBadRequest, "Could not find token", err)

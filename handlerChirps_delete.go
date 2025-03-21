@@ -8,7 +8,7 @@ import (
 	"github.com/w6ncp/chirpy/internal/auth"
 )
 
-func (cfg *apiConfig) handleDeleteChirp(w http.ResponseWriter, r *http.Request) {
+func (cfg *apiConfig) handlerDeleteChirp(w http.ResponseWriter, r *http.Request) {
 	chirpIDString := r.PathValue("chirpID")
 	chirpID, err := uuid.Parse(chirpIDString)
 	if err != nil {
